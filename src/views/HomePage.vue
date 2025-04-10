@@ -1,11 +1,25 @@
 <script setup>
+import sourceData from "../data.json";
+
+const destinations = sourceData.destinations;
 </script>
 
 <template>
-  <h1>Home</h1>
-  <p>This is the content of the home page</p>
-  <RouterLink to="/about">About page</RouterLink>
+  <section class="home">
+    <h1>All destinations</h1>
+    <section class="destinations">
+      <RouterLink
+        v-for="destination in destinations"
+        :key="destination.id"
+        :to="destination.slug"
+      >
+        <h2>
+          {{ destination.name }}
+        </h2>
+        <img :src="`../../public/images/${destination.image}`" :alt="destination.name" />
+      </RouterLink>
+    </section>
+  </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
