@@ -14,6 +14,12 @@ const routes = [
     component: () => import("../views/DestinationDetails.vue"),
     props: true,
   },
+  {
+    path: "/experience/:id/:slug/:experienceSlug",
+    name: "experience.details",
+    component: () => import("../views/ExperienceDetails.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
