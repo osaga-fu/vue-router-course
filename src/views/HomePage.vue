@@ -16,7 +16,7 @@ const destinations = sourceData.destinations;
         <h2>
           {{ destination.name }}
         </h2>
-        <img :src="`../../public/images/${destination.image}`" :alt="destination.name" />
+        <img :src="`/images/${destination.image}`" :alt="destination.name" />
       </RouterLink>
     </section>
   </section>
