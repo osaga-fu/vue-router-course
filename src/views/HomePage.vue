@@ -11,7 +11,7 @@ const destinations = sourceData.destinations;
       <RouterLink
         v-for="destination in destinations"
         :key="destination.id"
-        :to="destination.slug"
+        :to="{ name: 'destination.details', params: { id: destination.id } }"
       >
         <h2>
           {{ destination.name }}
