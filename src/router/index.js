@@ -8,6 +8,7 @@ const routes = [
   { path: "/panama", name: "Panama", component: () => import('../views/PanamaPage.vue')},
   { path: "/hawaii", name: "Hawaii", component: () => import('../views/HawaiiPage.vue') },
   { path: "/jamaica", name: "Jamaica", component: () => import('../views/JamaicaPage.vue') },
+  { path: "/destination/:id", component: () => import('../views/DestinationDetails.vue') },
 ];
 
 const router = createRouter({
