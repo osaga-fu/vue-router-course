@@ -1,13 +1,22 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from "vue-router";
+import sourceData from "../data.json";
+
+const destinations = sourceData.destinations;
+</script>
 
 <template>
   <nav id="nav">
+    <RouterLink id="logo" to="/">Travel App</RouterLink>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/brazil">Brazil</RouterLink>
-    <RouterLink to="/hawaii">Hawaii</RouterLink>
-    <RouterLink to="/panama">Panama</RouterLink>
-    <RouterLink to="/jamaica">Jamaica</RouterLink>
+    <RouterLink
+      v-for="destination in destinations"
+      :key="destination.id"
+      :to="{ name: 'destination.details', params: { id: destination.id } }"
+    >
+      {{ destination.name }}
+    </RouterLink>
   </nav>
 </template>
 
