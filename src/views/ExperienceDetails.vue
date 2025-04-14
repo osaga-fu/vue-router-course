@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import sourceData from "../data.json";
+import GoBack from "../components/GoBackButton.vue";
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -25,6 +26,7 @@ const experience = computed(() => {
     <h1>{{ experience.name }}</h1>
     <img :src="`/images/${experience.image}`" :alt="experience.name" />
     <p>{{ experience.description }}</p>
+    <GoBack />
   </section>
 </template>
 

@@ -3,6 +3,7 @@ import { computed } from "vue";
 import sourceData from "../data.json";
 import ExperienceCard from "../components/ExperienceCard.vue";
 import { RouterLink, RouterView } from "vue-router";
+import GoBack from "../components/GoBackButton.vue";
 
 const props = defineProps({ id: { type: String, reguired: true } });
 
@@ -16,6 +17,7 @@ const destination = computed(() =>
 <template>
   <section class="destination">
     <h1>{{ destination.name }}</h1>
+    <GoBack />
     <article class="destination-details">
       <img :src="`/images/${destination.image}`" :alt="destination.name" />
       <p>{{ destination.description }}</p>
