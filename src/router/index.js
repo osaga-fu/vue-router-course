@@ -29,6 +29,11 @@ const routes = [
     component: () => import("../views/ExperienceDetails.vue"),
     props: true,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("../views/NotFoundPage.vue"),
+  },
 ];
 
 const router = createRouter({
