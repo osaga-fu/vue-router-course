@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import sourceData from "../data.json";
 import ExperienceCard from "../components/ExperienceCard.vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, RouterView } from "vue-router";
 
 const props = defineProps({ id: { type: String, reguired: true } });
 
@@ -35,6 +35,8 @@ const destination = computed(() =>
         <ExperienceCard :experience="experience" />
       </RouterLink>
     </div>
+    <!-- WE USE THIS ROUTER VIEW TO NEST A ROUTE -->
+    <!-- <RouterView ></RouterView> -->
   </section>
 </template>
 

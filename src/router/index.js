@@ -13,6 +13,15 @@ const routes = [
     name: "destination.details",
     component: () => import("../views/DestinationDetails.vue"),
     props: true,
+    // NESTED ROUTE
+    // children: [
+    //   {
+    //     path: ":experienceSlug",
+    //     name: "experience.details",
+    //     component: () => import("../views/ExperienceDetails.vue"),
+    //     props: true,
+    //   },
+    // ],
   },
   {
     path: "/experience/:id/:slug/:experienceSlug",
