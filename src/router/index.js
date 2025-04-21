@@ -18,6 +18,14 @@ const routes = [
     component: () => import("../views/LogInPage.vue"),
   },
   {
+    path: "/invoices",
+    name: "Invoices",
+    component: () => import("../views/InvoicesPage.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/about",
     name: "About",
     component: () => import("../views/AboutPage.vue"),
@@ -73,7 +81,7 @@ const router = createRouter({
 //Global navigation guard
 router.beforeEach((to, from) => {
   if (to.meta.requiresAuth && !window.user) {
-    return { name: "Login" };
+    return { name: "Login", query: { redirect: to.fullPath } };
   }
 });
 
