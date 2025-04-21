@@ -1,16 +1,16 @@
 <script setup>
-import { RouterLink } from "vue-router";
 import sourceData from "../data.json";
+import AppLink from "./AppLink.vue";
 
 const destinations = sourceData.destinations;
 </script>
 
 <template>
   <nav id="nav">
-    <RouterLink id="logo" to="/">Travel App</RouterLink>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink
+    <AppLink id="logo" to="/">Travel App</AppLink>
+    <AppLink to="/">Home</AppLink>
+    <AppLink to="/about">About</AppLink>
+    <AppLink
       v-for="destination in destinations"
       :key="destination.id"
       :to="{
@@ -19,8 +19,9 @@ const destinations = sourceData.destinations;
       }"
     >
       {{ destination.name }}
-    </RouterLink>
-    <RouterLink :to="{ name: 'Protected' }">Dashboard</RouterLink>
+    </AppLink>
+    <AppLink :to="{ name: 'Protected' }">Dashboard</AppLink>
+    <AppLink to="https://google.com">Google</AppLink>
   </nav>
 </template>
 
