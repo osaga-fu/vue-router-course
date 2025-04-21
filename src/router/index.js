@@ -4,6 +4,7 @@ import sourceData from "../data.json";
 
 const routes = [
   { path: "/", name: "Home", component: HomePage },
+  { path: "/home", redirect: "/" },
   {
     path: "/protected",
     name: "Protected",
