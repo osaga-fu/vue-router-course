@@ -13,10 +13,14 @@ const destinations = sourceData.destinations;
     <RouterLink
       v-for="destination in destinations"
       :key="destination.id"
-      :to="{ name: 'destination.details', params: { id: destination.id, slug: destination.slug } }"
+      :to="{
+        name: 'destination.details',
+        params: { id: destination.id, slug: destination.slug },
+      }"
     >
       {{ destination.name }}
     </RouterLink>
+    <RouterLink :to="{ name: 'Protected' }">Dashboard</RouterLink>
   </nav>
 </template>
 

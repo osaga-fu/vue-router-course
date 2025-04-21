@@ -5,6 +5,19 @@ import sourceData from "../data.json";
 const routes = [
   { path: "/", name: "Home", component: HomePage },
   {
+    path: "/protected",
+    name: "Protected",
+    component: () => import("../views/ProtectedPage.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/LogInPage.vue"),
+  },
+  {
     path: "/about",
     name: "About",
     component: () => import("../views/AboutPage.vue"),
@@ -56,6 +69,12 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     return savedPosition || { top: 0 };
   },
+});
+//Global navigation guard
+router.beforeEach((to, from) => {
+  if (to.meta.requiresAuth && !window.user) {
+    return { name: "Login" };
+  }
 });
 
 export default router;
